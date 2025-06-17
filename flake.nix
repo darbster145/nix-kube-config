@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, ... }:
     {
       nixosConfigurations.nk0 = nixpkgs.lib.nixosSystem {
         system = system
