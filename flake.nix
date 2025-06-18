@@ -7,27 +7,35 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }: {
-    nixosConfigurations = {
-      nk0 = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/nk0/configuration.nix
-        ];
-      };
+  outputs =
+    { self
+    , nixpkgs
+    , ...
+    } @ inputs:
+    let
+      nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    in
+    {
+      nixosConfigurations = {
+        nk0 = nixpkgs.lib.nixosSystem {
+          modules = [
+            ./hosts/nk0/configuration.nix
+          ];
+        };
 
-      nk1 = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/nk1/configuration.nix
-        ];
-      };
+        nk1 = nixpkgs.lib.nixosSystem {
+          modules = [
+            ./hosts/nk1/configuration.nix
+          ];
+        };
 
-      nk2 = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/nk2/configuration.nix
-        ];
+        nk2 = nixpkgs.lib.nixosSystem {
+          modules = [
+            ./hosts/nk2/configuration.nix
+          ];
+        };
       };
     };
-  };
 }
 
 
