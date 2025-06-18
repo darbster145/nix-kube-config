@@ -20,18 +20,21 @@
         nk0 = nixpkgs.lib.nixosSystem {
           modules = [
             ./hosts/nk0/configuration.nix
+            ./kubernetes/master.nix
           ];
         };
 
         nk1 = nixpkgs.lib.nixosSystem {
           modules = [
             ./hosts/nk1/configuration.nix
+            ./kubernetes/node.nix
           ];
         };
 
         nk2 = nixpkgs.lib.nixosSystem {
           modules = [
             ./hosts/nk2/configuration.nix
+            ./kubernetes/node.nix
           ];
         };
       };
