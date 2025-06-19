@@ -67,6 +67,7 @@
     #  wget
     git
     neovim
+    k9s
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
