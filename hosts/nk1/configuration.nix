@@ -11,7 +11,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Hostname
-  networking.hostName = "nk1"; 
+  networking.hostName = "nk1";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -71,9 +71,10 @@
     ];
   };
 
-  
   # Used for cluster reset
-  services.etcd.enable = true;
+  #services.etcd.enable = true;
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   system.stateVersion = "24.11";
 

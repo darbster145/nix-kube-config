@@ -5,9 +5,7 @@
     enable = true;
     role = "server";
     # TODO, Use SOPS-NIX here 
-    #tokenFile = "/var/lib/rancher/k3s/server/token";
-    token = "SZM9Bk70";
+    tokenFile = "/var/lib/rancher/k3s/server/token";
     clusterInit = true;
   };
-
 }
