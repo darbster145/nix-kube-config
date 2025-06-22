@@ -35,19 +35,11 @@
 
     {
       nixosConfigurations = {
-        nk0 = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
-          modules = [
-            ./hosts/nk0/configuration.nix
-            ./kubernetes/master.nix
-          ];
-        };
-
         nk1 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/nk1/configuration.nix
-            ./kubernetes/node.nix
+            ./kubernetes/master.nix
           ];
         };
 
@@ -55,6 +47,14 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/nk2/configuration.nix
+            ./kubernetes/node.nix
+          ];
+        };
+
+        nk3 = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/nk3/configuration.nix
             ./kubernetes/node.nix
           ];
         };

@@ -71,6 +71,10 @@
     ];
   };
 
+  
+  # Used for cluster reset
+  services.etcd.enable = true;
+
   system.stateVersion = "24.11";
 
 }

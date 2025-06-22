@@ -11,7 +11,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Hostname
-  networking.hostName = "nk0"; 
+  networking.hostName = "nk3"; 
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -70,6 +70,10 @@
       8472
     ];
   };
+
+  
+  # Used for cluster reset
+  services.etcd.enable = true;
 
   system.stateVersion = "24.11";
 
